@@ -1,41 +1,23 @@
+// Typewriter Effect
 const textElement = document.getElementById('typewriter');
 const phrases = ['Frontend Developer'];
 let phraseIndex = 0;
 let charIndex = 0;
 
 function type() {
-    if (charIndex < phrases[phraseIndex].length) {
-        textElement.textContent += phrases[phraseIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 300);
+    if (phraseIndex < phrases.length) {
+        if (charIndex < phrases[phraseIndex].length) {
+            textElement.textContent += phrases[phraseIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 150); // Made slightly faster for cleaner feel
+        }
     }
 }
-
 type();
 
-const setupHoverEffect = (selector, childSelector, activeStyles, inactiveStyles) => {
-    const elements = document.querySelectorAll(selector);
-    elements.forEach((el) => {
-        const target = el.querySelector(childSelector);
-        
-        el.addEventListener('mouseenter', () => {
-            Object.assign(target.style, activeStyles);
-            if(el.classList.contains('skill')) el.querySelector('p').style.color = '#fff';
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            Object.assign(target.style, inactiveStyles);
-            if(el.classList.contains('skill')) el.querySelector('p').style.color = '#7b8c9d';
-        });
-    });
-};
-
-setupHoverEffect('.card', '.cardLink', { display: 'flex' }, { display: 'none' });
-setupHoverEffect('.skill', 'img', { transform: 'scale(1.2)' }, { transform: 'scale(1)' });
-
+// Scroll & Navigation Logic
 const header = document.querySelector('header');
 const headerName = document.querySelector('.header_name');
-
 const navMap = [
     { link: document.querySelector('#aboutLink'), section: document.querySelector('#about') },
     { link: document.querySelector('#projectsLink'), section: document.querySelector('#projects') },
@@ -43,26 +25,30 @@ const navMap = [
     { link: document.querySelector('#contactLink'), section: document.querySelector('#contact') }
 ];
 
+// Scroll to top on name click
 headerName.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// Smooth Scroll for Nav Links
 navMap.forEach(({ link, section }) => {
     if (!link || !section) return;
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const offset = window.innerWidth <= 768 ? 120 : 20;
+        const offset = 80; // Adjusted for new header height
         const top = section.offsetTop - offset;
         window.scrollTo({ top, behavior: 'smooth' });
     });
 });
 
+// Active Link Highlighting on Scroll
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     
-    header.style.borderBottom = scrollY > 50 ? '0.5px solid #7b8c9d36' : 'none';
+    // Add border to header on scroll
+    header.style.borderBottom = scrollY > 50 ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(255, 255, 255, 0.05)';
 
-    const offset = window.innerWidth <= 768 ? 130 : 30;
+    const offset = 150; // Trigger zone
 
     navMap.forEach(({ link, section }) => {
         if (!link || !section) return;
@@ -71,51 +57,17 @@ window.addEventListener('scroll', () => {
         const sectionBottom = sectionTop + section.offsetHeight;
 
         if (scrollY >= sectionTop && scrollY < sectionBottom) {
+            link.classList.add('active'); // Use CSS class for active state
             link.style.color = 'var(--TC)';
-            link.style.textShadow = '0px 0px 30px var(--TC)';
         } else {
+            link.classList.remove('active');
             link.style.color = '';
-            link.style.textShadow = '';
         }
     });
 });
 
+// Contact Form Handling
 const contactForm = document.querySelector('.contactForm');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const button = contactForm.querySelector('button');
-        const data = new FormData(contactForm);
-        
-        button.innerText = 'Sending...';
-        button.disabled = true;
-
-        const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            button.innerText = 'Message Sent!';
-            button.style.backgroundColor = '#28a745';
-            contactForm.reset();
-            setTimeout(() => {
-                button.innerText = 'Send Message';
-                button.style.backgroundColor = '';
-                button.disabled = false;
-            }, 3000);
-        } else {
-            button.innerText = 'Error! Try again.';
-            button.style.backgroundColor = '#dc3545';
-            button.disabled = false;
-        }
-    });
-}
-
 const toast = document.getElementById('toast-notification');
 const toastMsg = document.getElementById('toast-message');
 
@@ -133,6 +85,7 @@ if (contactForm) {
         const button = contactForm.querySelector('button');
         const data = new FormData(contactForm);
         
+        const originalText = button.innerText;
         button.innerText = 'Sending...';
         button.disabled = true;
 
@@ -152,8 +105,45 @@ if (contactForm) {
         } catch (error) {
             showToast("Network error. Check your connection.", true);
         } finally {
-            button.innerText = 'Send Message';
+            button.innerText = originalText;
             button.disabled = false;
         }
     });
 }
+
+/* --- Mobile Menu Logic --- */
+const menuBtn = document.getElementById('menuBtn');
+const headerLinks = document.getElementById('headerLinks');
+const menuIcon = menuBtn.querySelector('i');
+
+// Toggle Menu Open/Close
+menuBtn.addEventListener('click', () => {
+    headerLinks.classList.toggle('active');
+    
+    // Optional: Switch icon from Bars to X
+    if (headerLinks.classList.contains('active')) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+    } else {
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+    }
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.header_links_a').forEach(link => {
+    link.addEventListener('click', () => {
+        headerLinks.classList.remove('active');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+    });
+});
+
+// Close menu if clicking outside of it
+document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) {
+        headerLinks.classList.remove('active');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+    }
+});

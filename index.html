@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Personal portfolio for Fady Tamer, a Computer Science student specializing in Java, SQL, and web development.">
-    <title>Fady Tamer</title>
-    <meta name="description"
         content="Personal portfolio for Fady Tamer, a Computer Science student specializing in Frontend development.">
     <meta name="keywords"
         content="Fady Tamer, Portfolio, Frontend Developer, Web Development, Computer Science, HTML, CSS, JavaScript, PHP, MySQL">
+    <title>Fady Tamer | Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link rel="icon" href="img/logo w b.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -21,19 +24,26 @@
         <a class="header_name">
             <h1 class="header_name_h1">Fady Tamer</h1>
         </a>
-        <nav class="header_links">
+        
+        <div class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="header_links" id="headerLinks">
             <a class="header_links_a" id="aboutLink">About</a>
             <a class="header_links_a" id="projectsLink">Projects</a>
             <a class="header_links_a" id="skillsLink">Skills</a>
             <a class="header_links_a" id="contactLink">Contact</a>
         </nav>
     </header>
+    
     <div class="spheres">
         <div class="sphere1"></div>
         <div class="sphere2"></div>
         <div class="sphere3"></div>
         <div class="sphere4"></div>
     </div>
+
     <div class="content">
         <div class="welcome" id="welcome">
             <p class="welcomeMainText">Hi, my name is</p>
@@ -44,6 +54,7 @@
                 <a class="welcomeBtn" href="#projects">View My Work</a>
             </div>
         </div>
+
         <div class="about" id="about">
             <div class="aboutHeader">
                 <h2 class="aboutTitle"><span>01. </span>About Me</h2>
@@ -51,14 +62,13 @@
             </div>
             <p class="aboutText">
                 Dedicated and detail-oriented Computer Science student with strong <span>problem-solving</span> skills
-                and hands-on
-                experience in <span>web development</span>, <span>database design</span>. <br><br>
-                <span>Education :</span> Bachelor's degree in Computer Science from <span>Modern Academy, Cairo,
-                    Egypt</span> <br><br>
-                <span>certifications :</span> <br>
-            <pre class="aboutText">      <span>-</span> The Web Front End Learning Guide</pre>
+                and hands-on experience in <span>web development</span> and <span>database design</span>. <br><br>
+                <span>Education:</span> Bachelor's degree in Computer Science from <span>Modern Academy, Cairo, Egypt</span> <br><br>
+                <span>Certifications:</span> <br>
+                <span class="cert-item">- The Web Front End Learning Guide</span>
             </p>
         </div>
+
         <div class="projects" id="projects">
             <div class="projectsHeader">
                 <h2 class="projectsTitle"><span>02. </span>Projects</h2>
@@ -68,16 +78,14 @@
                 <div class="card">
                     <img src="img/images.png" alt="Project 1" class="cardImage">
                     <div class="cardLink">
-                        <a href="https://github.com/Fady-tamer/E-Book-project">
+                        <a href="https://github.com/Fady-tamer/E-Book-project" target="_blank">
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </div>
                     <div class="cardContent">
                         <h2 class="cardTitle">E-Book Store</h2>
                         <p class="cardDescription">
-                            This project is a Java-based desktop application designed to manage an E-Book Store. It
-                            provides a graphical user interface (GUI) for managing books, publishers, and authors in a
-                            database.
+                            Java-based desktop application designed to manage an E-Book Store. GUI for managing books, publishers, and authors.
                         </p>
                         <div class="usedSkill">
                             <span>Java</span>
@@ -88,15 +96,14 @@
                 <div class="card">
                     <img src="img/rentels.png" alt="Project 2" class="cardImage">
                     <div class="cardLink">
-                        <a href="https://github.com/Fady-tamer/Rentels">
+                        <a href="https://github.com/Fady-tamer/Rentels" target="_blank">
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </div>
                     <div class="cardContent">
                         <h2 class="cardTitle">Rentels</h2>
                         <p class="cardDescription">
-                            This project about Rentals/Real Estate Marketplace provided fantastic experience in database
-                            design, backend logic, and frontend performance optimization.
+                            Real Estate Marketplace. Provided fantastic experience in database design, backend logic, and frontend performance.
                         </p>
                         <div class="usedSkill">
                             <span>HTML</span>
@@ -108,6 +115,7 @@
                 </div>
             </div>
         </div>
+
         <div class="skills" id="skills">
             <div class="skillsHeader">
                 <h2 class="skillsTitle"><span>03. </span>Skills & Technologies</h2>
@@ -115,32 +123,33 @@
             </div>
             <div class="skillsContainer">
                 <div class="skill">
-                    <img src="img/c-.png" alt="">
+                    <img src="img/c-.png" alt="C++">
                     <p>C++</p>
                 </div>
                 <div class="skill">
-                    <img src="img/html-5.png" alt="">
+                    <img src="img/html-5.png" alt="HTML">
                     <p>HTML</p>
                 </div>
                 <div class="skill">
-                    <img src="img/css-3.png" alt="">
+                    <img src="img/css-3.png" alt="CSS">
                     <p>CSS</p>
                 </div>
                 <div class="skill">
-                    <img src="img/js.png" alt="">
+                    <img src="img/js.png" alt="JavaScript">
                     <p>JavaScript</p>
                 </div>
                 <div class="skill">
-                    <img src="img/php.png" alt="">
+                    <img src="img/php.png" alt="PHP">
                     <p>PHP</p>
                 </div>
                 <div class="skill">
-                    <img src="img/mysql.png" alt="">
+                    <img src="img/mysql.png" alt="MySQL">
                     <p>MySQL</p>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="contact" id="contact">
         <div class="contactHeader">
             <h2 class="contactTitle"><span>04. </span>Contact Me</h2>
@@ -148,8 +157,7 @@
         </div>
         <div class="contactContent">
             <p class="contactText">I'm currently looking for new opportunities. <br>
-                Whether you have a question or just want
-                to say hi, I'll try my best to get back to you!</p>
+                Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
             <form class="contactForm" action="https://formspree.io/f/mvzpwjkw" method="POST">
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
@@ -158,32 +166,24 @@
             </form>
         </div>
     </div>
+
     <div id="toast-notification" class="toast">
         <div class="toast-content">
             <span id="toast-message">Message sent successfully!</span>
         </div>
     </div>
+
     <div class="footer">
         <div class="link">
-            <a href="https://www.linkedin.com/in/fady-tamer/">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.facebook.com/fadytamer444/">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/_fady_tamer_/">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://github.com/Fady-tamer">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="mailto:fadytamer2018@gmail.com">
-                <i class="fa-solid fa-inbox"></i>
-            </a>
+            <a href="https://www.linkedin.com/in/fady-tamer/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/fadytamer444/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/_fady_tamer_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/Fady-tamer" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:fadytamer2018@gmail.com"><i class="fa-solid fa-inbox"></i></a>
         </div>
         <p>&copy;2025 Fady Tamer. All rights reserved.</p>
     </div>
+
     <script src="index.js"></script>
 </body>
-
 </html>
