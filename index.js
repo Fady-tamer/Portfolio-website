@@ -20,6 +20,7 @@ const header = document.querySelector('header');
 const headerName = document.querySelector('.header_name');
 const navMap = [
     { link: document.querySelector('#aboutLink'), section: document.querySelector('#about') },
+    { link: document.querySelector('#certificationsLink'), section: document.querySelector('#certifications') },
     { link: document.querySelector('#projectsLink'), section: document.querySelector('#projects') },
     { link: document.querySelector('#skillsLink'), section: document.querySelector('#skills') },
     { link: document.querySelector('#contactLink'), section: document.querySelector('#contact') }
