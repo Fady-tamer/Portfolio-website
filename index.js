@@ -19,11 +19,11 @@ type();
 const header = document.querySelector('header');
 const headerName = document.querySelector('.header_name');
 const navMap = [
-    { link: document.querySelector('#aboutLink'), section: document.querySelector('#about') },
-    { link: document.querySelector('#certificationsLink'), section: document.querySelector('#certifications') },
-    { link: document.querySelector('#projectsLink'), section: document.querySelector('#projects') },
-    { link: document.querySelector('#skillsLink'), section: document.querySelector('#skills') },
-    { link: document.querySelector('#contactLink'), section: document.querySelector('#contact') }
+    { link: document.querySelector('#aboutLink'), section: document.querySelector('#about'), hr: document.querySelector('#aboutHr')},
+    { link: document.querySelector('#certificationsLink'), section: document.querySelector('#certifications'), hr: document.querySelector('#certificationsHr')},
+    { link: document.querySelector('#projectsLink'), section: document.querySelector('#projects'), hr: document.querySelector('#projectsHr')},
+    { link: document.querySelector('#skillsLink'), section: document.querySelector('#skills'), hr: document.querySelector('#skillsHr')},
+    { link: document.querySelector('#contactLink'), section: document.querySelector('#contact'), hr: document.querySelector('#contactHr')}
 ];
 
 // Scroll to top on name click
@@ -32,8 +32,8 @@ headerName.addEventListener('click', () => {
 });
 
 // Smooth Scroll for Nav Links
-navMap.forEach(({ link, section }) => {
-    if (!link || !section) return;
+navMap.forEach(({ link, section, hr }) => {
+    if (!link || !section || !hr) return;
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const offset = 80; // Adjusted for new header height
@@ -47,22 +47,27 @@ window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     
     // Add border to header on scroll
-    header.style.borderBottom = scrollY > 50 ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(255, 255, 255, 0.05)';
+    header.style.borderBottom = scrollY > 50 ? '1px solid #0fe1fd7c' : '1px solid #0fe1fd26';
 
     const offset = 150; // Trigger zone
 
-    navMap.forEach(({ link, section }) => {
-        if (!link || !section) return;
+    navMap.forEach(({ link, section, hr }) => {
+        if (!link || !section || !hr) return;
         
         const sectionTop = section.offsetTop - offset;
         const sectionBottom = sectionTop + section.offsetHeight;
 
         if (scrollY >= sectionTop && scrollY < sectionBottom) {
-            link.classList.add('active'); // Use CSS class for active state
+            link.classList.add('active');
             link.style.color = 'var(--TC)';
+            hr.style.backgroundColor = 'var(--TC)';
+            hr.style.animation = 'growUp 3s 1 forwards';
+            
         } else {
             link.classList.remove('active');
             link.style.color = '';
+            hr.style.backgroundColor = '#233554';
+            hr.style.animation = '';
         }
     });
 });

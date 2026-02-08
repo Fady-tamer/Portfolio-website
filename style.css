@@ -156,7 +156,6 @@ body {
 .contact,
 .certifications {
     padding: 100px 10%;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -176,11 +175,20 @@ body {
 .skillsHeader hr,
 .contactHeader hr,
 .certificationsHeader hr {
-    flex-grow: 1;
-    width: auto;
-    border: 0;
+    flex-grow: 0;
+    width: 100px;
+    border: none;
     height: 1px;
-    background: #233554;
+}
+
+@keyframes growUp {
+    from {
+        flex-grow: 0;
+    }
+
+    to {
+        flex-grow: 1;
+    }
 }
 
 .aboutTitle,
@@ -558,40 +566,122 @@ body {
     pointer-events: none;
 }
 
-.sphere1,
-.sphere2,
-.sphere3,
-.sphere4 {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.4;
-}
-
 @media (min-width: 769px) {
     .sphere1 {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(50px);
+        opacity: 0.5;
         width: 400px;
         height: 400px;
-        background: #0fe1fd22;
-        top: -100px;
-        left: -100px;
+        top: 10%;
+        left: 10%;
+        background: #0fe1fd33;
+        animation: moveInsphere1 5s 1, floatSphere1 5s infinite alternate 6s;
     }
 
     .sphere2 {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(50px);
+        opacity: 0.5;
         width: 500px;
         height: 500px;
-        background: #0fe1fd11;
-        bottom: 0;
-        right: -150px;
+        top: 10%;
+        left: 70%;
+        background: #0fe1fd33;
+        animation: moveInsphere2 5s 1, floatSphere2 5s infinite alternate 6s;
     }
 
     .sphere3 {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(50px);
+        opacity: 0.5;
         width: 300px;
         height: 300px;
+        top: 60%;
+        left: 50%;
         background: #0fe1fd33;
-        top: 20%;
-        right: 20%;
-        opacity: 0.15;
+        animation: moveInsphere3 5s 1, floatSphere3 5s infinite alternate 6s;
+    }
+
+    @keyframes floatSphere1 {
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        100% {
+            transform: translate(570px, 0) scale(1.1);
+        }
+    }
+
+    @keyframes floatSphere2 {
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        100% {
+            transform: translate(-130px, 200px) scale(1.1);
+        }
+    }
+
+    @keyframes floatSphere3 {
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        100% {
+            transform: translate(-630px, -30px) scale(1.1);
+        }
+    }
+
+    @keyframes moveInsphere1 {
+        from {
+            opacity: 0;
+            top: -10%;
+            left: -10%;
+            filter: blur(0px);
+        }
+
+        to {
+            opacity: 0.5;
+            top: 10%;
+            left: 10%;
+            filter: blur(50px);
+        }
+    }
+
+    @keyframes moveInsphere2 {
+        from {
+            opacity: 0;
+            top: -10%;
+            left: -70%;
+            filter: blur(0px);
+        }
+
+        to {
+            opacity: 0.5;
+            top: 10%;
+            left: 70%;
+            filter: blur(50px);
+        }
+    }
+
+    @keyframes moveInsphere3 {
+        from {
+            opacity: 0;
+            top: -60%;
+            right: -40%;
+            filter: blur(0px);
+        }
+
+        to {
+            opacity: 0.5;
+            top: 60%;
+            right: 40%;
+            filter: blur(50px);
+        }
     }
 }
 
@@ -712,7 +802,8 @@ body {
     .about,
     .projects,
     .skills,
-    .contact {
+    .contact,
+    .certifications {
         padding: 60px 20px;
     }
 
