@@ -1,15 +1,15 @@
 // Typewriter Effect
 const textElement = document.getElementById('typewriter');
-const phrases = ['Frontend Developer'];
+const phrase = ['Frontend Developer'];
 let phraseIndex = 0;
 let charIndex = 0;
 
 function type() {
-    if (phraseIndex < phrases.length) {
-        if (charIndex < phrases[phraseIndex].length) {
-            textElement.textContent += phrases[phraseIndex].charAt(charIndex);
+    if (phraseIndex < phrase.length) {
+        if (charIndex < phrase[phraseIndex].length) {
+            textElement.textContent += phrase[phraseIndex].charAt(charIndex);
             charIndex++;
-            setTimeout(type, 150); // Made slightly faster for cleaner feel
+            setTimeout(type, 150);
         }
     }
 }
@@ -31,12 +31,11 @@ headerName.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Smooth Scroll for Nav Links
 navMap.forEach(({ link, section, hr }) => {
     if (!link || !section || !hr) return;
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const offset = 80; // Adjusted for new header height
+        const offset = 80;
         const top = section.offsetTop - offset;
         window.scrollTo({ top, behavior: 'smooth' });
     });
@@ -45,11 +44,17 @@ navMap.forEach(({ link, section, hr }) => {
 // Active Link Highlighting on Scroll
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
+
+    //back to top button
+    const backToTop = document.querySelector('#backToTop');
+    backToTop.style.display = scrollY > 50 ? 'flex' : 'none';
+    backToTop.addEventListener('click', () =>{
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
     
-    // Add border to header on scroll
     header.style.borderBottom = scrollY > 50 ? '1px solid #0fe1fd7c' : '1px solid #0fe1fd26';
 
-    const offset = 150; // Trigger zone
+    const offset = 150;
 
     navMap.forEach(({ link, section, hr }) => {
         if (!link || !section || !hr) return;
@@ -62,7 +67,6 @@ window.addEventListener('scroll', () => {
             link.style.color = 'var(--TC)';
             hr.style.backgroundColor = 'var(--TC)';
             hr.style.animation = 'growUp 3s 1 forwards';
-            
         } else {
             link.classList.remove('active');
             link.style.color = '';
@@ -126,7 +130,6 @@ const menuIcon = menuBtn.querySelector('i');
 menuBtn.addEventListener('click', () => {
     headerLinks.classList.toggle('active');
     
-    // Optional: Switch icon from Bars to X
     if (headerLinks.classList.contains('active')) {
         menuIcon.classList.remove('fa-bars');
         menuIcon.classList.add('fa-xmark');
@@ -152,4 +155,19 @@ document.addEventListener('click', (e) => {
         menuIcon.classList.remove('fa-xmark');
         menuIcon.classList.add('fa-bars');
     }
+});
+
+// show section
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.scrollY + window.innerHeight/2;
+    
+    navMap.forEach(({ section }) => {
+        if (!section) return;
+        
+        const sectionTop = section.offsetTop;
+
+        if (triggerBottom > sectionTop) {
+            section.style.animation = 'show 3s forwards';
+        }
+    });
 });
