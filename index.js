@@ -52,24 +52,32 @@ window.addEventListener('scroll', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     })
     
-    header.style.borderBottom = scrollY > 50 ? '1px solid #0fe1fd7c' : '1px solid #0fe1fd26';
+    // header.style.borderBottom = scrollY > 50 ? '1px solid #0fe1fd7c' : '1px solid #0fe1fd26';
 
-    const offset = 150;
+    // const offset = 150;
+
+    const linkBackground = document.querySelector('.linkBackground');
+
 
     navMap.forEach(({ link, section, hr }) => {
         if (!link || !section || !hr) return;
         
-        const sectionTop = section.offsetTop - offset;
+        const sectionTop = section.offsetTop - window.innerHeight/4;
         const sectionBottom = sectionTop + section.offsetHeight;
 
         if (scrollY >= sectionTop && scrollY < sectionBottom) {
             link.classList.add('active');
             link.style.color = 'var(--TC)';
+            linkBackground.style.left = `${link.offsetLeft}px`;
+            linkBackground.style.width = `${link.offsetWidth}px`;
+            linkBackground.style.height = `${link.offsetHeight}px`;
+            linkBackground.style.backgroundColor = 'rgba(34, 42, 51, 0.8)';
             hr.style.backgroundColor = 'var(--TC)';
             hr.style.animation = 'growUp 3s 1 forwards';
         } else {
             link.classList.remove('active');
             link.style.color = '';
+            link.style.backgroundColor = 'transparent';
             hr.style.backgroundColor = '#233554';
             hr.style.animation = '';
         }
