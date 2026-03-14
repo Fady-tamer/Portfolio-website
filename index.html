@@ -4,33 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Fady Tamer | Software Engineer & frontend Developer</title>
-
+    <title>Fady Tamer | Software Engineer & Frontend Developer</title>
     <meta name="description"
         content="Fady Tamer is a Software Engineer in Cairo specializing in Web Development. View his portfolio, projects, and technical skills.">
     <meta name="keywords"
-        content="Fady Tamer, Software Engineer, Web Developer, frontend Developer, Portfolio, Computer Science">
-
+        content="Fady Tamer, Software Engineer, Web Developer, Frontend Developer, Portfolio, Computer Science">
     <meta name="language" content="English">
     <meta name="author" content="Fady Tamer">
 
+    <!-- icon -->
     <link rel="icon" type="image/png" href="img/icon.png">
 
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;700&display=swap"
         rel="stylesheet">
+
+    <!-- enteral stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- external stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 
 <body>
     <header class="header">
-        <a class="header_name">
-            <span class="header_name_h1" style="font-weight:bold; font-size:24px;">Fady Tamer</span>
+        <a class="header_name" aria-label="Back to top">
+            <h1 class="header_name_h1">Fady Tamer</h1>
         </a>
 
         <div class="menu-btn" id="menuBtn" role="button" aria-label="Toggle Menu" tabindex="0">
@@ -40,7 +42,7 @@
         <nav class="header_links" id="headerLinks">
             <div class="linkBackground"></div>
             <a href="#about" class="header_links_a" id="aboutLink">About</a>
-            <a href="#certifications" class="header_links_a" id="certificationsLink">certifications</a>
+            <a href="#certifications" class="header_links_a" id="certificationsLink">Certifications</a>
             <a href="#projects" class="header_links_a" id="projectsLink">Projects</a>
             <a href="#skills" class="header_links_a" id="skillsLink">Skills</a>
             <a href="#contact" class="header_links_a" id="contactLink">Contact</a>
@@ -56,7 +58,7 @@
     <main class="content">
         <section class="welcome" id="welcome">
             <p class="welcomeMainText">Hi, my name is</p>
-            <h1 class="name">Fady Tamer</h1>
+            <h2 class="name">Fady Tamer</h2>
             <p class="title" id="typewriter"></p>
             <div class="btn">
                 <a class="welcomeBtn" href="data/CV.pdf" download>Download CV</a>
@@ -64,12 +66,12 @@
             </div>
         </section>
 
-        <section class="about" id="about">
-            <div class="aboutHeader">
-                <h2 class="aboutTitle"><span>01. </span>About Me</h2>
+        <section class="section-container" id="about">
+            <div class="section-header">
+                <h2 class="section-title"><span>01. </span>About Me</h2>
                 <hr id="aboutHr">
             </div>
-            <p class="aboutText">
+            <p class="section-text">
                 Dedicated and detail-oriented Computer Science student with strong <span>problem-solving</span> skills
                 and hands-on experience in <span>web development</span>. <br><br>
                 <span>Education:</span> Bachelor's degree in Computer Science from <span>Modern Academy, Cairo,
@@ -77,39 +79,38 @@
             </p>
         </section>
 
-        <section class="certifications" id="certifications">
-            <div class="certificationsHeader">
-                <h2 class="certificationsTitle"><span>02. </span>certifications</h2>
+        <section class="section-container" id="certifications">
+            <div class="section-header">
+                <h2 class="section-title"><span>02. </span>Certifications</h2>
                 <hr id="certificationsHr">
             </div>
-            <div class="certifications-cards">
-                <article class="certifications-card">
-                    <img src="img/UC-b53d84ba-69f8-4821-81bd-82d88a619b35.jpg" alt="" class="certifications-cardImage"
-                        loading="lazy">
-                    <div class="certifications-cardContent">
-                        <h3 class="certifications-cardTitle">The Web Front End Learning Guide</h3>
-                        <p class="certifications-cardID"><span>Credential ID:
-                            </span>UC-b53d84ba-69f8-4821-81bd-82d88a619b35</p>
-                        <p class="certifications-cardDate"><span>Date: </span>6/12/25</p>
-                        <ul class="certifications-usedSkill">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                        </ul>
+            <div class="cards">
+                <article class="card">
+                    <img src="img/UC-b53d84ba-69f8-4821-81bd-82d88a619b35.jpg"
+                        alt="Web Front End Learning Guide Certificate" class="cardImage" loading="lazy">
+                    <div class="cardContent">
+                        <h3 class="cardTitle">The Web Front End Learning Guide</h3>
+                        <p class="cardSubtitle"><span>Credential ID: </span>UC-b53d84ba-69f8-4821-81bd-82d88a619b35</p>
+                        <p class="cardSubtitle"><span>Date: </span>6/12/25</p>
+                        <div class="usedSkill">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="projects" id="projects">
-            <div class="projectsHeader">
-                <h2 class="projectsTitle"><span>02. </span>Projects</h2>
+        <section class="section-container" id="projects">
+            <div class="section-header">
+                <h2 class="section-title"><span>03. </span>Projects</h2>
                 <hr id="projectsHr">
             </div>
             <div class="cards">
                 <article class="card">
-                    <img src="img/images.png" alt="Java E-Book Store Application Dashboard" class="cardImage"
-                        loading="lazy" width="400" height="200">
+                    <img src="img/images.png" alt="Java E-Book Store Application" class="cardImage" loading="lazy"
+                        width="400" height="200">
                     <div class="cardLink">
                         <a href="https://github.com/Fady-tamer/E-Book-project" target="_blank" rel="noopener noreferrer"
                             aria-label="View E-Book Project on GitHub">
@@ -124,13 +125,13 @@
                         </p>
                         <div class="usedSkill">
                             <span>Java</span>
-                            <span>Microsoft SQL Server</span>
+                            <span>Microsoft-SQL-Server</span>
                         </div>
                     </div>
                 </article>
                 <article class="card">
-                    <img src="img/rentels.png" alt="Rentels Real Estate Marketplace Website" class="cardImage"
-                        loading="lazy" width="400" height="200">
+                    <img src="img/rentels.png" alt="Rentels Real Estate Marketplace" class="cardImage" loading="lazy"
+                        width="400" height="200">
                     <div class="cardLink">
                         <a href="https://github.com/Fady-tamer/Rentels" target="_blank" rel="noopener noreferrer"
                             aria-label="View Rentels Project on GitHub">
@@ -151,63 +152,82 @@
                         </div>
                     </div>
                 </article>
+                <article class="card">
+                    <img src="img/artist-gallery.png" alt="Rana Art Gallery Website" class="cardImage" loading="lazy"
+                        width="400" height="200">
+                    <div class="cardLink" style="gap: 25px;">
+                        <a href="https://github.com/Fady-tamer/Rana-gallery" target="_blank" rel="noopener noreferrer"
+                            aria-label="View Rana Gallery on GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://artist-rana-gallery.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            aria-label="View Live Gallery">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                    <div class="cardContent">
+                        <h3 class="cardTitle">Artist Gallery</h3>
+                        <p class="cardDescription">
+                            A custom gallery website built to showcase the artwork of an artist named Rana. The project
+                            features a clean, responsive layout and is deployed via Vercel for fast, reliable access.
+                        </p>
+                        <div class="usedSkill">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>FireBase</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section class="skills" id="skills">
-            <div class="skillsHeader">
-                <h2 class="skillsTitle"><span>03. </span>Skills & Technologies</h2>
+        <section class="section-container" id="skills">
+            <div class="section-header">
+                <h2 class="section-title"><span>04. </span>Skills & Technologies</h2>
                 <hr id="skillsHr">
             </div>
             <div class="skillsContainer">
-                <div class="skill">
-                    <img src="img/c-.png" alt="C++ Programming Language" loading="lazy" width="50" height="50">
+                <div class="skill"><img src="img/c-.png" alt="C++" loading="lazy" width="50" height="50">
                     <p>C++</p>
                 </div>
-                <div class="skill">
-                    <img src="img/html-5.png" alt="HTML5" loading="lazy" width="50" height="50">
+                <div class="skill"><img src="img/html-5.png" alt="HTML5" loading="lazy" width="50" height="50">
                     <p>HTML</p>
                 </div>
-                <div class="skill">
-                    <img src="img/css-3.png" alt="CSS3" loading="lazy" width="50" height="50">
+                <div class="skill"><img src="img/css-3.png" alt="CSS3" loading="lazy" width="50" height="50">
                     <p>CSS</p>
                 </div>
-                <div class="skill">
-                    <img src="img/js.png" alt="JavaScript" loading="lazy" width="50" height="50">
+                <div class="skill"><img src="img/js.png" alt="JavaScript" loading="lazy" width="50" height="50">
                     <p>JavaScript</p>
                 </div>
-                <div class="skill">
-                    <img src="img/php.png" alt="PHP Hypertext Preprocessor" loading="lazy" width="50" height="50">
+                <div class="skill"><img src="img/php.png" alt="PHP" loading="lazy" width="50" height="50">
                     <p>PHP</p>
                 </div>
-                <div class="skill">
-                    <img src="img/mysql.png" alt="MySQL Database" loading="lazy" width="50" height="50">
+                <div class="skill"><img src="img/mysql.png" alt="MySQL" loading="lazy" width="50" height="50">
                     <p>MySQL</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <section class="contact" id="contact">
-        <div class="contactHeader">
-            <h2 class="contactTitle"><span>04. </span>Contact Me</h2>
+    <section class="section-container" id="contact">
+        <div class="section-header">
+            <h2 class="section-title"><span>05. </span>Contact Me</h2>
             <hr id="contactHr">
         </div>
         <div class="contactContent">
-            <p class="contactText">I'm currently looking for new opportunities. <br>
+            <p class="section-text" style="text-align: center;">I'm currently looking for new opportunities. <br>
                 Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
 
             <form class="contactForm" action="https://formspree.io/f/mvzpwjkw" method="POST">
-                <label for="name" class="visually-hidden" style="display:none;">Name</label>
-                <input type="text" id="name" name="name" placeholder="Name" required aria-label="Your Name">
+                <label for="name" class="sr-only">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
 
-                <label for="email" class="visually-hidden" style="display:none;">Email</label>
-                <input type="email" id="email" name="email" placeholder="Email" required
-                    aria-label="Your Email Address">
+                <label for="email" class="sr-only">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
 
-                <label for="message" class="visually-hidden" style="display:none;">Message</label>
-                <textarea id="message" name="message" placeholder="Your Message" rows="5" required
-                    aria-label="Your Message"></textarea>
+                <label for="message" class="sr-only">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
 
                 <button type="submit" class="welcomeBtn">Send Message</button>
             </form>
@@ -215,9 +235,7 @@
     </section>
 
     <div id="toast-notification" class="toast" role="alert" aria-live="polite">
-        <div class="toast-content">
-            <span id="toast-message">Message sent successfully!</span>
-        </div>
+        <div class="toast-content"><span id="toast-message">Message sent successfully!</span></div>
     </div>
 
     <footer class="footer">
@@ -235,7 +253,7 @@
         <p>&copy;2025 Fady Tamer. All rights reserved.</p>
     </footer>
 
-    <a id="backToTop" class="backToTop">
+    <a id="backToTop" class="backToTop" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </a>
 
