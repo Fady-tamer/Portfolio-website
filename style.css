@@ -490,10 +490,6 @@ body {
     transform: scale(1.03);
 }
 
-.cardContent {
-    /* Internal padding handled by Bootstrap utility classes where applicable or kept here */
-}
-
 .cardTitle {
     margin: 0 0 10px 0;
     color: var(--Text-Main);
@@ -518,10 +514,6 @@ body {
     margin-bottom: 20px;
 }
 
-.usedSkill {
-    /* Flex and gap handled by Bootstrap utility classes */
-}
-
 .usedSkill span {
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
@@ -534,7 +526,7 @@ body {
 
 .cardLink {
     background: rgba(10, 14, 19, 0.85);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
     opacity: 0;
     transition: opacity 0.3s ease;
 }

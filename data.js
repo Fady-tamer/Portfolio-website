@@ -52,6 +52,14 @@ const portfolioData = {
         "A custom gallery website built to showcase the artwork of an artist named Rana. The project features a clean, responsive layout and is deployed via Vercel for fast, reliable access.",
       skills: ["HTML", "CSS", "JavaScript", "Firebase"],
     },
+    {
+      title: "ALL-IN-ONE",
+      image: "img/all-in-one-store.png",
+      github: "https://github.com/Fady-tamer/all-in-one-store",
+      description:
+        "online grocery store where customers can browse products, manage their cart, and place orders in real time. It also includes an admin panel for managing inventory and tracking incoming orders.",
+      skills: ["HTML", "CSS", "JavaScript", "Firebase"],
+    },
   ],
   skills: [
     {
