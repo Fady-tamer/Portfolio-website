@@ -13,11 +13,14 @@ function renderPortfolio() {
     welcomeMainText.textContent =
       portfolioData.personalInfo.greeting || "Hi, my name is";
 
-  document.querySelector(".name").textContent = portfolioData.personalInfo.name;
-  document.querySelector(".welcomeBtn[download]").href =
-    portfolioData.personalInfo.cvLink;
-  document.querySelector("#about-text").innerHTML =
-    portfolioData.personalInfo.about;
+  const nameEl = document.querySelector(".name");
+  if (nameEl) nameEl.textContent = portfolioData.personalInfo.name;
+
+  const cvBtn = document.querySelector(".welcomeBtn[download]");
+  if (cvBtn) cvBtn.href = portfolioData.personalInfo.cvLink;
+
+  const aboutEl = document.querySelector("#about-text");
+  if (aboutEl) aboutEl.innerHTML = portfolioData.personalInfo.about;
 
   // 2. Typewriter roles
   phrases.length = 0;
