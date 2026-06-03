@@ -1,15 +1,3 @@
-// --- Loading Screen ---
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  setTimeout(() => {
-    loader.classList.add("hidden");
-    // Fully remove from DOM after transition
-    setTimeout(() => {
-      loader.remove();
-    }, 600);
-  }, 1600);
-});
-
 // --- Dynamic Content Rendering ---
 function renderPortfolio() {
   if (typeof portfolioData === "undefined") return;
@@ -31,11 +19,6 @@ function renderPortfolio() {
   document.querySelector("#about-text").innerHTML =
     portfolioData.personalInfo.about;
 
-  // Update footer email
-  const footerEmail = document.querySelector('footer a[href^="mailto:"]');
-  if (footerEmail)
-    footerEmail.href = `mailto:${portfolioData.personalInfo.email}`;
-
   // 2. Typewriter roles
   phrases.length = 0;
   const roles = portfolioData.personalInfo.role.split("&").map((r) => r.trim());
@@ -53,10 +36,14 @@ function renderPortfolio() {
     ];
     socials.forEach((s) => {
       if (portfolioData.socialLinks[s.key]) {
-        linkContainer.innerHTML += `<a href="${portfolioData.socialLinks[s.key]}" target="_blank" class="text-decoration-none" rel="noopener noreferrer" aria-label="${s.key}"><i class="fa-brands ${s.icon}"></i></a>`;
+        linkContainer.innerHTML += `<a href="${portfolioData.socialLinks[s.key]}" 
+          target="_blank" class="text-decoration-none" 
+          rel="noopener noreferrer" 
+          aria-label="${s.key}">
+          <i class="fa-brands ${s.icon}"></i>
+        </a>`;
       }
     });
-    linkContainer.innerHTML += `<a href="mailto:${portfolioData.personalInfo.email}" aria-label="Email Me"><i class="fa-solid fa-inbox"></i></a>`;
   }
 
   // 4. Certifications
@@ -68,7 +55,7 @@ function renderPortfolio() {
           <div class="col-md-6 col-lg-4">
               <article class="card h-100 custom-portfolio-card">
                   <img src="${cert.image}" alt="${cert.title}" class="cardImage certImage p-0 object-fit-cover" loading="lazy">
-                  <div class="cardContent d-flex flex-column flex-grow-1 p-4">
+                  <div class="d-flex flex-column flex-grow-1 p-4">
                       <h3 class="cardTitle">${cert.title}</h3>
                       <p class="cardSubtitle"><span>Credential ID: </span>${cert.credentialId}</p>
                       <p class="cardSubtitle"><span>Date: </span>${cert.date}</p>
@@ -96,7 +83,7 @@ function renderPortfolio() {
                       ${proj.github ? `<a href="${proj.github}" target="_blank" class="text-decoration-none" rel="noopener noreferrer" aria-label="View on GitHub"><i class="fa-brands fa-github"></i></a>` : ""}
                       ${proj.live ? `<a href="${proj.live}" target="_blank" class="text-decoration-none" rel="noopener noreferrer" aria-label="View Live Gallery"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : ""}
                   </div>
-                  <div class="cardContent d-flex flex-column flex-grow-1 p-4">
+                  <div class="d-flex flex-column flex-grow-1 p-4">
                       <h3 class="cardTitle">${proj.title}</h3>
                       <p class="cardDescription flex-grow-1">${proj.description}</p>
                       <div class="usedSkill d-flex flex-wrap gap-2 mt-auto pt-3">
@@ -144,11 +131,9 @@ function renderPortfolio() {
   }
 }
 
-// Initialize dynamic content before typewriter runs
 const phrases = [];
 renderPortfolio();
 
-// --- Typewriter Effect (Multi-phrase with delete) ---
 const textElement = document.getElementById("typewriter");
 let phraseIndex = 0;
 let charIndex = 0;
@@ -230,7 +215,7 @@ navMap.forEach(({ link, section, hr }) => {
   });
 });
 
-// --- Back to top (set up ONCE, not in scroll handler) ---
+// --- Back to top ---
 const backToTop = document.querySelector("#backToTop");
 backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -367,44 +352,3 @@ document.addEventListener("click", (e) => {
     menuIcon.classList.add("fa-bars");
   }
 });
-
-// --- Custom Cursor Logic ---
-const cursor = document.getElementById("customCursor");
-const cursorFollower = document.getElementById("customCursorFollower");
-
-if (cursor && cursorFollower) {
-  let mouseX = 0,
-    mouseY = 0;
-  let followerX = 0,
-    followerY = 0;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-  });
-
-  function animateFollower() {
-    followerX += (mouseX - followerX) * 0.15;
-    followerY += (mouseY - followerY) * 0.15;
-    cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px)`;
-    requestAnimationFrame(animateFollower);
-  }
-  animateFollower();
-
-  const hoverSelectors =
-    "a, button, input, textarea, .menu-btn, .header_name, .skill-badge, .custom-portfolio-card";
-  document.addEventListener("mouseover", (e) => {
-    if (e.target.closest(hoverSelectors)) {
-      cursor.classList.add("hover");
-      cursorFollower.classList.add("hover");
-    }
-  });
-
-  document.addEventListener("mouseout", (e) => {
-    if (e.target.closest(hoverSelectors)) {
-      cursor.classList.remove("hover");
-      cursorFollower.classList.remove("hover");
-    }
-  });
-}

@@ -6,10 +6,7 @@
 
 :root {
     --BGC: #0a0e13;
-    --CC: #11171d;
     --TC: #0fe1fd;
-    --TC-Dim: rgba(15, 225, 253, 0.1);
-    --TC-Glow: rgba(15, 225, 253, 0.25);
     --Text-Main: #ccd6f6;
     --Text-Dim: #8892b0;
     --card-bg: rgba(17, 23, 29, 0.6);
@@ -76,78 +73,6 @@ body {
     overflow-x: hidden;
     background-color: var(--BGC) !important;
     color: var(--Text-Dim) !important;
-}
-
-/* --- Loader --- */
-.loader {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: var(--BGC);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-.loader.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.loader-content {
-    text-align: center;
-}
-
-.loader-name {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--TC);
-    margin-bottom: 24px;
-    animation: pulse 1.2s ease-in-out infinite;
-}
-
-.loader-bar {
-    width: 200px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.loader-bar-fill {
-    height: 100%;
-    width: 0%;
-    background: var(--gradient-accent);
-    background-size: 200% 100%;
-    border-radius: 3px;
-    animation: loadFill 1.5s ease forwards, shimmer 1s linear infinite;
-}
-
-@keyframes loadFill {
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes shimmer {
-    to {
-        background-position: -200% 0;
-    }
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
 }
 
 /* --- Header --- */
@@ -563,7 +488,7 @@ body {
     transition: all 0.3s;
 }
 
-/* --- Skills (Bootstrap-powered) --- */
+/* --- Skills --- */
 .skill-category {
     background: var(--card-bg);
     backdrop-filter: blur(12px);
@@ -815,7 +740,7 @@ body {
     animation: moving 1.5s infinite alternate;
 }
 
-/* --- Toast (custom- prefix to avoid Bootstrap conflict) --- */
+/* --- Toast --- */
 .custom-toast {
     visibility: hidden;
     min-width: 250px;
@@ -1111,76 +1036,4 @@ body {
     .scroll-hint {
         bottom: 20px;
     }
-}
-
-/* --- Custom Cursor --- */
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    margin-left: -4px;
-    margin-top: -4px;
-    background-color: var(--TC);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transition: width 0.2s, height 0.2s, margin-left 0.2s, margin-top 0.2s, background-color 0.2s;
-}
-
-.custom-cursor-follower {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    margin-left: -15px;
-    margin-top: -15px;
-    border: 2px solid rgba(15, 225, 253, 0.5);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: width 0.2s, height 0.2s, margin-left 0.2s, margin-top 0.2s, border-color 0.2s, background-color 0.2s;
-}
-
-@media (pointer: fine) {
-
-    body,
-    a,
-    button,
-    input,
-    textarea,
-    .menu-btn,
-    .header_name,
-    .skill-badge,
-    .custom-portfolio-card {
-        cursor: none !important;
-    }
-}
-
-@media (pointer: coarse) {
-
-    .custom-cursor,
-    .custom-cursor-follower {
-        display: none !important;
-    }
-}
-
-.custom-cursor.hover {
-    width: 12px;
-    height: 12px;
-    margin-left: -6px;
-    margin-top: -6px;
-    background-color: transparent;
-    border: 2px solid var(--TC);
-}
-
-.custom-cursor-follower.hover {
-    width: 50px;
-    height: 50px;
-    margin-left: -25px;
-    margin-top: -25px;
-    border-color: var(--TC);
-    background-color: rgba(15, 225, 253, 0.1);
 }
