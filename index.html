@@ -1,163 +1,567 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fady Tamer | Software Engineer & Frontend Developer</title>
-    <meta name="description"
-        content="Fady Tamer is a Software Engineer in Cairo specializing in Web Development. View his portfolio, projects, and technical skills.">
-    <meta name="keywords"
-        content="Fady Tamer, Software Engineer, Web Developer, Frontend Developer, Portfolio, Computer Science">
-    <meta name="language" content="English">
-    <meta name="author" content="Fady Tamer">
+    <meta
+      name="description"
+      content="Fady Tamer is a Software Engineer in Cairo specializing in Web Development. View his portfolio, projects, and technical skills."
+    />
+    <meta
+      name="keywords"
+      content="Fady Tamer, Software Engineer, Web Developer, Frontend Developer, Portfolio, Computer Science"
+    />
+    <meta name="language" content="English" />
+    <meta name="author" content="Fady Tamer" />
 
-    <meta property="og:title" content="Fady Tamer | Software Engineer & Frontend Developer">
-    <meta property="og:description"
-        content="Software Engineer in Cairo specializing in Web Development. View portfolio, projects, and technical skills.">
-    <meta property="og:type" content="website">
+    <meta
+      property="og:title"
+      content="Fady Tamer | Software Engineer & Frontend Developer"
+    />
+    <meta
+      property="og:description"
+      content="Software Engineer in Cairo specializing in Web Development. View portfolio, projects, and technical skills."
+    />
+    <meta property="og:type" content="website" />
 
-    <link rel="icon" type="image/png" href="img/icon.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <body>
+    <header
+      class="header sticky-top d-flex align-items-center justify-content-between px-3 py-2 z-3"
+      id="siteHeader"
+    >
+      <a class="header_name" aria-label="Back to top">
+        <h1 class="header_name_h1">Fady Tamer</h1>
+      </a>
 
-    <link rel="stylesheet" href="style.css">
+      <div
+        class="menu-btn"
+        id="menuBtn"
+        role="button"
+        aria-label="Toggle Menu"
+        tabindex="0"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-</head>
-
-<body>
-    <header class="header sticky-top d-flex align-items-center justify-content-between px-3 py-2 z-3" id="siteHeader">
-        <a class="header_name" aria-label="Back to top">
-            <h1 class="header_name_h1"></h1>
-        </a>
-
-        <div class="menu-btn" id="menuBtn" role="button" aria-label="Toggle Menu" tabindex="0">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-        <nav class="header_links align-items-center" id="headerLinks">
-            <div class="linkBackground"></div>
-            <a href="#about" class="header_links_a" id="aboutLink">About</a>
-            <a href="#certifications" class="header_links_a" id="certificationsLink">Certifications</a>
-            <a href="#projects" class="header_links_a" id="projectsLink">Projects</a>
-            <a href="#skills" class="header_links_a" id="skillsLink">Skills</a>
-            <a href="#contact" class="header_links_a" id="contactLink">Contact</a>
-        </nav>
+      <nav class="header_links align-items-center" id="headerLinks">
+        <div class="linkBackground"></div>
+        <a href="#about" class="header_links_a" id="aboutLink">About</a>
+        <a href="#certifications" class="header_links_a" id="certificationsLink"
+          >Certifications</a
+        >
+        <a href="#projects" class="header_links_a" id="projectsLink"
+          >Projects</a
+        >
+        <a href="#skills" class="header_links_a" id="skillsLink">Skills</a>
+        <a href="#contact" class="header_links_a" id="contactLink">Contact</a>
+      </nav>
     </header>
 
     <div class="spheres" aria-hidden="true">
-        <div class="sphere1"></div>
-        <div class="sphere2"></div>
-        <div class="sphere3"></div>
+      <div class="sphere1"></div>
+      <div class="sphere2"></div>
+      <div class="sphere3"></div>
     </div>
 
     <main class="content">
-        <section class="welcome d-flex flex-column justify-content-center align-items-center position-relative"
-            id="welcome">
-            <p class="welcomeMainText"></p>
-            <h2 class="name py-3"></h2>
-            <p class="title" id="typewriter"></p>
-            <div class="btn d-flex flex-column flex-lg-row gap-3 mt-4">
-                <a class="welcomeBtn" href="data/CV.pdf" download>
-                    <i class="fa-solid fa-download"></i> Download CV
-                </a>
-                <a class="welcomeBtn welcomeBtn--outline" href="#projects">
-                    <i class="fa-solid fa-code"></i> View My Work
-                </a>
-            </div>
-            <div class="scroll-hint position-absolute bottom-0 mb-5 d-flex flex-column align-items-center gap-2"
-                aria-hidden="true">
-                <div class="scroll-mouse">
-                    <div class="scroll-wheel"></div>
+      <section
+        class="welcome d-flex flex-column justify-content-center align-items-center position-relative"
+        id="welcome"
+      >
+        <p class="welcomeMainText">Hi, my name is</p>
+        <h2 class="name py-3">Fady Tamer</h2>
+        <p class="title" id="typewriter">
+          Software Engineer & Frontend Developer
+        </p>
+        <div class="btn d-flex flex-column flex-lg-row gap-3 mt-4">
+          <a class="welcomeBtn" href="data/CV.pdf" download>
+            <i class="fa-solid fa-download"></i> Download CV
+          </a>
+          <a class="welcomeBtn welcomeBtn--outline" href="#projects">
+            <i class="fa-solid fa-code"></i> View My Work
+          </a>
+        </div>
+        <div
+          class="scroll-hint position-absolute bottom-0 mb-5 d-flex flex-column align-items-center gap-2"
+          aria-hidden="true"
+        >
+          <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+          <span>Scroll Down</span>
+        </div>
+      </section>
+
+      <section class="section-container container py-5 my-5" id="about">
+        <div class="section-header d-flex align-items-center gap-3 mb-5">
+          <h2 class="section-title m-0"><span>01. </span>About Me</h2>
+          <hr id="aboutHr" />
+        </div>
+        <p class="section-text" id="about-text">
+          Dedicated and detail-oriented Computer Science student with strong
+          <span>problem-solving</span> skills and hands-on experience in
+          <span>web development</span>. <br /><br />
+          <span>Education:</span> Bachelor's Degree in Computer Science from
+          <span>Modern Academy, Cairo, Egypt</span>.
+        </p>
+      </section>
+
+      <section
+        class="section-container container py-5 my-5"
+        id="certifications"
+      >
+        <div class="section-header d-flex align-items-center gap-3 mb-5">
+          <h2 class="section-title m-0"><span>02. </span>Certifications</h2>
+          <hr id="certificationsHr" />
+        </div>
+        <div class="row g-4 d-flex" id="certifications-grid">
+          <div class="md-6 col-lg-4">
+            <article class="card h-100 custom-portfolio-card">
+              <img
+                src="img/UC-b53d84ba-69f8-4821-81bd-82d88a619b35.jpg"
+                alt="The Web Front End Learning Guide"
+                class="cardImage certImage p-0 object-fit-cover"
+                loading="lazy"
+              />
+              <div class="d-flex flex-column flex-grow-1 p-4">
+                <h3 class="cardTitle">The Web Front End Learning Guide</h3>
+                <p class="cardSubtitle">
+                  <span>Credential ID: </span
+                  >UC-b53d84ba-69f8-4821-81bd-82d88a619b35
+                </p>
+                <p class="cardSubtitle"><span>Date: </span>6/12/25</p>
+                <div class="usedSkill d-flex flex-wrap gap-2 mt-auto pt-3">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
                 </div>
-                <span>Scroll Down</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-container container py-5 my-5" id="projects">
+        <div class="section-header d-flex align-items-center gap-3 mb-5">
+          <h2 class="section-title m-0"><span>03. </span>Projects</h2>
+          <hr id="projectsHr" />
+        </div>
+        <div class="row g-4" id="projects-grid">
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 custom-portfolio-card">
+              <img
+                src="img/images.png"
+                alt="E-Book Store"
+                class="cardImage"
+                loading="lazy"
+                width="400"
+                height="200"
+              />
+              <div
+                class="cardLink position-absolute w-100 h-50 d-flex justify-content-center align-items-center gap-4"
+              >
+                <a
+                  href="https://github.com/Fady-tamer/E-Book-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View on GitHub"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+              <div class="d-flex flex-column flex-grow-1 p-4">
+                <h3 class="cardTitle">E-Book Store</h3>
+                <p class="cardDescription flex-grow-1">
+                  Java-based desktop application designed to manage an E-Book
+                  Store. GUI for managing books, publishers, and authors.
+                </p>
+                <div class="usedSkill d-flex flex-wrap gap-2 mt-auto pt-3">
+                  <span>Java</span><span>Microsoft-SQL-Server</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 custom-portfolio-card">
+              <img
+                src="img/rentels.png"
+                alt="Rentals"
+                class="cardImage"
+                loading="lazy"
+                width="400"
+                height="200"
+              />
+              <div
+                class="cardLink position-absolute w-100 h-50 d-flex justify-content-center align-items-center gap-4"
+              >
+                <a
+                  href="https://github.com/Fady-tamer/Rentels"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View on GitHub"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+              <div class="d-flex flex-column flex-grow-1 p-4">
+                <h3 class="cardTitle">Rentals</h3>
+                <p class="cardDescription flex-grow-1">
+                  Real Estate Marketplace. Provided a fantastic experience in
+                  database design, backend logic, and frontend performance.
+                </p>
+                <div class="usedSkill d-flex flex-wrap gap-2 mt-auto pt-3">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span
+                  ><span>PHP</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 custom-portfolio-card">
+              <img
+                src="img/artist-gallery.png"
+                alt="Artist Gallery"
+                class="cardImage"
+                loading="lazy"
+                width="400"
+                height="200"
+              />
+              <div
+                class="cardLink position-absolute w-100 h-50 d-flex justify-content-center align-items-center gap-4"
+              >
+                <a
+                  href="https://github.com/Fady-tamer/Rana-gallery"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View on GitHub"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+                <a
+                  href="https://artist-rana-gallery.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Live Gallery"
+                  ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                ></a>
+              </div>
+              <div class="d-flex flex-column flex-grow-1 p-4">
+                <h3 class="cardTitle">Artist Gallery</h3>
+                <p class="cardDescription flex-grow-1">
+                  A custom gallery website built to showcase the artwork of an
+                  artist named Rana. Features a clean, responsive layout and is
+                  deployed via Vercel.
+                </p>
+                <div class="usedSkill d-flex flex-wrap gap-2 mt-auto pt-3">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span
+                  ><span>Firebase</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 custom-portfolio-card">
+              <img
+                src="img/all-in-one-store.png"
+                alt="ALL-IN-ONE"
+                class="cardImage"
+                loading="lazy"
+                width="400"
+                height="200"
+              />
+              <div
+                class="cardLink position-absolute w-100 h-50 d-flex justify-content-center align-items-center gap-4"
+              >
+                <a
+                  href="https://github.com/Fady-tamer/all-in-one-store"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View on GitHub"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+              <div class="d-flex flex-column flex-grow-1 p-4">
+                <h3 class="cardTitle">ALL-IN-ONE</h3>
+                <p class="cardDescription flex-grow-1">
+                  Online grocery store where customers can browse products,
+                  manage their cart, and place orders in real time. Includes an
+                  admin panel.
+                </p>
+                <div class="usedSkill d-flex flex-wrap gap-2 mt-auto pt-3">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span
+                  ><span>Firebase</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-container container py-5 my-5" id="skills">
+        <div class="section-header d-flex align-items-center gap-3 mb-5">
+          <h2 class="section-title m-0">
+            <span>04. </span>Skills & Technologies
+          </h2>
+          <hr id="skillsHr" />
+        </div>
+        <div class="row g-4" id="skills-grid">
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-category">
+              <div class="skill-category-header">
+                <div class="skill-category-icon">
+                  <i class="fa-solid fa-terminal"></i>
+                </div>
+                <h3 class="skill-category-title">Languages</h3>
+              </div>
+              <div class="skill-badges">
+                <div class="skill-badge">
+                  <img
+                    src="img/c-.png"
+                    alt="C++"
+                    loading="lazy"
+                    width="28"
+                    height="28"
+                  /><span>C++</span>
+                </div>
+                <div class="skill-badge">
+                  <img
+                    src="img/js.png"
+                    alt="JavaScript"
+                    loading="lazy"
+                    width="28"
+                    height="28"
+                  /><span>JavaScript</span>
+                </div>
+                <div class="skill-badge">
+                  <img
+                    src="img/php.png"
+                    alt="PHP"
+                    loading="lazy"
+                    width="28"
+                    height="28"
+                  /><span>PHP</span>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <section class="section-container container py-5 my-5" id="about">
-            <div class="section-header d-flex align-items-center gap-3 mb-5">
-                <h2 class="section-title m-0"><span>01. </span>About Me</h2>
-                <hr id="aboutHr">
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-category">
+              <div class="skill-category-header">
+                <div class="skill-category-icon">
+                  <i class="fa-solid fa-palette"></i>
+                </div>
+                <h3 class="skill-category-title">Frontend</h3>
+              </div>
+              <div class="skill-badges">
+                <div class="skill-badge">
+                  <img
+                    src="img/html-5.png"
+                    alt="HTML"
+                    loading="lazy"
+                    width="28"
+                    height="28"
+                  /><span>HTML</span>
+                </div>
+                <div class="skill-badge">
+                  <img
+                    src="img/css-3.png"
+                    alt="CSS"
+                    loading="lazy"
+                    width="28"
+                    height="28"
+                  /><span>CSS</span>
+                </div>
+                <div class="skill-badge">
+                  <img
+                    src="img/js.png"
+                    alt="JavaScript"
+                    loading="lazy"
+                    width="28"
+                    height="28"
+                  /><span>JavaScript</span>
+                </div>
+              </div>
             </div>
-            <p class="section-text" id="about-text"></p>
-        </section>
+          </div>
 
-        <section class="section-container container py-5 my-5" id="certifications">
-            <div class="section-header d-flex align-items-center gap-3 mb-5">
-                <h2 class="section-title m-0"><span>02. </span>Certifications</h2>
-                <hr id="certificationsHr">
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-category">
+              <div class="skill-category-header">
+                <div class="skill-category-icon">
+                  <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3 class="skill-category-title">Frameworks</h3>
+              </div>
+              <div class="skill-badges">
+                <div class="skill-badge">
+                  <i
+                    class="fa-brands fa-bootstrap"
+                    style="font-size: 28px; color: #7952b3"
+                  ></i
+                  ><span>Bootstrap</span>
+                </div>
+              </div>
             </div>
-            <div class="row g-4" id="certifications-grid"></div>
-        </section>
+          </div>
 
-        <section class="section-container container py-5 my-5" id="projects">
-            <div class="section-header d-flex align-items-center gap-3 mb-5">
-                <h2 class="section-title m-0"><span>03. </span>Projects</h2>
-                <hr id="projectsHr">
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-category">
+              <div class="skill-category-header">
+                <div class="skill-category-icon">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <h3 class="skill-category-title">Backend</h3>
+              </div>
+              <div class="skill-badges">
+                <div class="skill-badge">
+                  <img
+                    src="img/php.png"
+                    alt="PHP"
+                    loading="lazy"
+                    width="28"
+                    height="28"
+                  /><span>PHP</span>
+                </div>
+                <div class="skill-badge">
+                  <img
+                    src="img/mysql.png"
+                    alt="MySQL"
+                    loading="lazy"
+                    width="28"
+                    height="28"
+                  /><span>MySQL</span>
+                </div>
+              </div>
             </div>
-            <div class="row g-4" id="projects-grid"></div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="section-container container py-5 my-5" id="skills">
-            <div class="section-header d-flex align-items-center gap-3 mb-5">
-                <h2 class="section-title m-0"><span>04. </span>Skills & Technologies</h2>
-                <hr id="skillsHr">
-            </div>
-            <div class="row g-4" id="skills-grid"></div>
-        </section>
+      <section class="section-container container py-5 my-5" id="contact">
+        <div class="section-header d-flex align-items-center gap-3 mb-5">
+          <h2 class="section-title m-0"><span>05. </span>Contact Me</h2>
+          <hr id="contactHr" />
+        </div>
+        <div class="d-flex flex-column align-items-center gap-4">
+          <p class="section-text text-center">
+            I'm currently looking for new opportunities. <br />
+            Whether you have a question or just want to say hi, I'll try my best
+            to get back to you!
+          </p>
 
-        <section class="section-container container py-5 my-5" id="contact">
-            <div class="section-header d-flex align-items-center gap-3 mb-5">
-                <h2 class="section-title m-0"><span>05. </span>Contact Me</h2>
-                <hr id="contactHr">
-            </div>
-            <div class="d-flex flex-column align-items-center gap-4">
-                <p class="section-text text-center">I'm currently looking for new opportunities. <br>
-                    Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+          <form
+            class="contactForm w-100 d-flex flex-column gap-3"
+            style="max-width: 500px"
+            action="https://formspree.io/f/mvzpwjkw"
+            method="POST"
+          >
+            <label for="name" class="sr-only">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Name"
+              required
+            />
 
-                <form class="contactForm w-100 d-flex flex-column gap-3" style="max-width: 500px;"
-                    action="https://formspree.io/f/mvzpwjkw" method="POST">
-                    <label for="name" class="sr-only">Name</label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+            <label for="email" class="sr-only">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Email"
+              required
+            />
 
-                    <label for="email" class="sr-only">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+            <label for="message" class="sr-only">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-control"
+              placeholder="Your Message"
+              rows="5"
+              required
+            ></textarea>
 
-                    <label for="message" class="sr-only">Message</label>
-                    <textarea id="message" name="message" class="form-control" placeholder="Your Message" rows="5"
-                        required></textarea>
-
-                    <button type="submit" class="welcomeBtn mt-2 mx-auto">
-                        <i class="fa-solid fa-paper-plane"></i> Send Message
-                    </button>
-                </form>
-            </div>
-        </section>
+            <button type="submit" class="welcomeBtn mt-2 mx-auto">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
 
-    <div id="toast-notification" class="custom-toast" role="alert" aria-live="polite">
-        <span id="toast-message">Message sent successfully!</span>
+    <div
+      id="toast-notification"
+      class="custom-toast"
+      role="alert"
+      aria-live="polite"
+    >
+      <span id="toast-message">Message sent successfully!</span>
     </div>
 
     <footer class="footer text-center py-4">
-        <div class="link d-flex justify-content-center gap-4 mb-4"></div>
-        <p>&copy;<span id="currentYear"></span> Fady Tamer. All rights reserved.</p>
+      <div class="link d-flex justify-content-center gap-4 mb-4">
+        <a
+          href="https://www.linkedin.com/in/fady-tamer/"
+          class="text-decoration-none"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          ><i class="fa-brands fa-linkedin-in"></i
+        ></a>
+        <a
+          href="https://www.facebook.com/fadytamer444/"
+          class="text-decoration-none"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/_fady_tamer_/"
+          class="text-decoration-none"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a
+          href="https://github.com/Fady-tamer"
+          class="text-decoration-none"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+      <p class="text-secondary">
+        &copy;<span id="currentYear"></span> Fady Tamer. All rights reserved.
+      </p>
     </footer>
 
     <a id="backToTop" class="backToTop" aria-label="Back to top">
-        <i class="fa-solid fa-arrow-up"></i>
+      <i class="fa-solid fa-arrow-up"></i>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="data.js"></script>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
