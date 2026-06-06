@@ -1,5 +1,5 @@
 // --- Typewriter Effect ---
-const phrases = ["Software Engineer", "Frontend Developer"];
+const phrases = ["Frontend Developer"];
 const textElement = document.getElementById("typewriter");
 let phraseIndex = 0;
 let charIndex = 0;
