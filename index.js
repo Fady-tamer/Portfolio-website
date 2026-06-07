@@ -94,12 +94,29 @@ window.addEventListener("scroll", () => {
   header.classList.toggle("scrolled", scrollY > 50);
 
   const linkBackground = document.querySelector(".linkBackground");
-  navMap.forEach(({ link, section, hr }) => {
-    if (!link || !section || !hr) return;
-    const sectionTop = section.offsetTop - window.innerHeight / 4;
-    const sectionBottom = sectionTop + section.offsetHeight;
 
-    if (scrollY >= sectionTop && scrollY < sectionBottom) {
+  // Check if user scrolled to the bottom of the page (with tolerance for rounding)
+  const atBottom =
+    window.innerHeight + scrollY >= document.documentElement.scrollHeight - 2;
+
+  // If at the bottom, force the last nav item (Contact) active
+  let activeIndex = -1;
+  if (atBottom) {
+    activeIndex = navMap.length - 1;
+  } else {
+    navMap.forEach(({ section }, i) => {
+      if (!section) return;
+      const sectionTop = section.offsetTop - window.innerHeight / 4;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionBottom) {
+        activeIndex = i;
+      }
+    });
+  }
+
+  navMap.forEach(({ link, hr }, i) => {
+    if (!link || !hr) return;
+    if (i === activeIndex) {
       link.classList.add("active");
       link.style.color = "var(--TC)";
       linkBackground.style.left = `${link.offsetLeft}px`;

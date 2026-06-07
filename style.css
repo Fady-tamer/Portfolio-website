@@ -1007,4 +1007,17 @@ body {
   .scroll-hint {
     bottom: 20px;
   }
+
+  .custom-portfolio-card {
+    flex-direction: column !important;
+  }
+
+  .cardImage {
+    width: 100% !important;
+    height: 200px;
+  }
+
+  .cardLink {
+    height: 200px;
+  }
 }
